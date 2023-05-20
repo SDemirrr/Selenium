@@ -14,10 +14,11 @@ import java.time.Duration;
 public class C02_Assertions {
     /*
    -Amazon sayfasina gidelim
-   -3 farkli test method'u olusturalim
+   -4 farkli test method'u olusturalim
      a-Url'in amazon icerdigini test edelim
      b-Title'in facebook icermedigini test edelim
      c-sol ust kosede amazon logosunun gorundugunu test edelim
+     d-Url'in www.facebook.com oldugunu test edelim
      */
 
     static WebDriver  driver;
@@ -38,10 +39,10 @@ public class C02_Assertions {
 
     @Test
     public void test1(){
-        //a-Url'in https://facebook.com oldugunu test edelim
-        String expectedUrl="https://facebook.com";
+        //a-Url'in facebook oldugunu test edelim
+        String expectedUrl="facebook";
         String actualUrl=driver.getCurrentUrl();
-        //Assert.assertEquals("Url'ler esit gegilse",expectedUrl,actualUrl);
+        Assert.assertFalse(expectedUrl.contains(actualUrl));
         Assert.assertNotEquals(expectedUrl,actualUrl);
 
     }
@@ -58,6 +59,13 @@ public class C02_Assertions {
         //c-sol ust kosede amazon logosunun gorundugunu test edelim
         Assert.assertTrue(driver.findElement(By.id("nav-logo-sprites")).isDisplayed());
 
+    }
+    @Test
+    public void test4(){
+       // d-Url'in www.facebook.com oldugunu test edelim
+       String expectedUrl= "www.facebook.com";
+       String actualUrl=driver.getCurrentUrl();
+       Assert.assertNotEquals(expectedUrl, actualUrl);
     }
 
 
