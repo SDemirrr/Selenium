@@ -40,6 +40,14 @@ public class C02_WindowHandle {
     public void test1() {
         //1-Amzon sayfasina gidelim
         driver.get("https://www.amazon.com");
+        String syfa1HandleDegeri=driver.getWindowHandle();
+        /*
+        Eger bize verilen task'te sayfalar arasi  gecis varsa her driver.get(); methodundan
+        sonra driver'in window handle degerini string bir degiskene atariz
+        Sonrasinda farkli bir sayfaya ya da sekmeye gitiikten sonra tekrar ilk sayfaya
+        donmemiz istenirse String degiskene atadigimiz window handle degerleriyle
+        sayfalar arasi gecis yapabiliriz.
+         */
 
         //2-Url'in amazon icerdigini test edelim
         String expectedUrl="amazon";
@@ -47,7 +55,6 @@ public class C02_WindowHandle {
         Assert.assertTrue(actualUrl.contains(expectedUrl));
 
         //3-Yeni bir pencere acip bestbuy ana sayfsina gidelim(https://www.bestbuy.com)
-        String syfa1HandleDegeri=driver.getWindowHandle();
         driver.switchTo().newWindow(WindowType.WINDOW);
         driver.get("https://www.bestbuy.com");
         String syfa2WindowHandleDegeri=driver.getWindowHandle();
