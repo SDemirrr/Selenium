@@ -74,7 +74,7 @@ public class C03_WindowHandle {
 
         //● Ilk acilan sayfaya donun ve amazon sayfasina dondugunuzu test edin
         driver.switchTo().window(amazonWindowHandleDegeri);
-        Assert.assertTrue(driver.getCurrentUrl().contains(actualTitle));
+        Assert.assertTrue(driver.getTitle().contains(actualTitle));
 
     }
 }
