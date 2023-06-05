@@ -1,18 +1,15 @@
-package Selenium.Selenium.day14;
+package Selenium.Selenium.day15;
 
-import org.apache.poi.ss.usermodel.Comment;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.apache.poi.ss.util.CellAddress;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Map;
 
-public class C05_ReadExcel {
-    /*
+public class C01_ReadExcel {
+     /*
     7. Dosya yolunu bir String degiskene atayalim
     8. FileInputStream objesi olusturup,parametre olarak dosya yolunu girelim
     9. Workbook objesi olusturalim,parameter olarak fileInputStream objesini girelim
@@ -29,21 +26,19 @@ public class C05_ReadExcel {
 
         //9. Workbook objesi olusturalim,parameter olarak fileInputStream objesini girelim
         Workbook workbook= WorkbookFactory.create(fis);
-
         //10. WorkbookFactory.create(fileInputStream)
-        //11.Sayfa2'ye gidip satir sayisinn 6, kullanilan satir sayisinin ise 3 oldugunu test edin
 
-        int satirSayisi=workbook.getSheet("Sayfa2").getLastRowNum();
-        System.out.println("Kullanilan satir sayisi : "+satirSayisi);
-        int expectedLastRow=6;
-        Assert.assertEquals(expectedLastRow,satirSayisi+1);
+        //11. Excel tablosundaki tum tabloyu konsola yazdirin
+        int satirSayisi=workbook.getSheet("Sayfa1").getLastRowNum();
+        String tablo="";
 
-        int kullanilanCellSayisi=workbook.getSheet("Sayfa2").getPhysicalNumberOfRows();
-        System.out.println("Kullanilan hucre sayisi : "+kullanilanCellSayisi);
-        int expectedCell=3;
-        Assert.assertEquals(expectedCell,kullanilanCellSayisi);
-
-
+        for (int i = 0; i <=satirSayisi; i++) {
+            tablo=workbook.getSheet("Sayfa1").getRow(i).getCell(0).toString()+","
+            +workbook.getSheet("Sayfa1").getRow(i).getCell(1).toString()+","
+                    +workbook.getSheet("Sayfa1").getRow(i).getCell(2).toString()+","
+                    +workbook.getSheet("Sayfa1").getRow(i).getCell(3).toString()+",";
+            System.out.println(tablo);
+        }
 
 
 
