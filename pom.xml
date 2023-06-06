@@ -19,24 +19,29 @@
            <groupId>org.seleniumhq.selenium</groupId>
            <artifactId>selenium-java</artifactId>
            <version>4.8.3</version>
+           <!--***Seleniumdaki java kodlarini kullanabilmek icin yukledik***-->
        </dependency>
+
        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
        <dependency>
            <groupId>io.github.bonigarcia</groupId>
            <artifactId>webdrivermanager</artifactId>
-           <version>5.1.0</version>
+           <version>5.3.2</version>
        </dependency>
        <dependency>
            <groupId>org.seleniumhq.selenium</groupId>
            <artifactId>selenium-http-jdk-client</artifactId>
            <version>4.5.0</version>
+           <!--***webdriver'i kullanabilmek icin yukledik***-->
        </dependency>
+
        <!-- https://mvnrepository.com/artifact/junit/junit -->
        <dependency>
            <groupId>junit</groupId>
            <artifactId>junit</artifactId>
            <version>4.13.1</version>
            <scope>test</scope>
+           <!--***@(anotasyonlari) kullanarak test yapabilmek icin yukledik***-->
        </dependency>
 
        <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
