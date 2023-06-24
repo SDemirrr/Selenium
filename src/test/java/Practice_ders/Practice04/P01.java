@@ -44,7 +44,7 @@ public class P01 extends TestBaseBeforeAfter {
 
        //bu listi kullanrak her bir Webelemnti kolayca formList'de bulunan webelemtlerimize gonderebiliriz
        List<String> text=new ArrayList<>(Arrays.asList("bu","listi",
-               "kullanarak","her","bir","ebelementi",
+               "kullanarak","her","bir","webelementi",
                "kolayca","formList","liste","gonderirirz","asd","fas","kaz"));
 
        for (int i = 0; i <formList.size(); i++) {
